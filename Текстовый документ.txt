@@ -1,0 +1,127 @@
+/*
+    private int CheckInput()
+    {
+        if (input != null && block != null)
+        {
+            Log.report("Incorrect worker");
+            return -1;
+        }
+
+        if (input == null && block == null)
+        {
+            Log.report("Incorrect worker");
+            return -1;
+        }
+        return 0;
+    }
+    /*DataInputStream ChooseInput() throws IOException
+    {
+        DataInputStream inp;
+        if(input == null)
+            inp = new DataInputStream(new ByteArrayInputStream(this.block));
+        else
+            inp = new DataInputStream(new FileInputStream(input));
+
+        return inp;
+    }
+
+    DataOutputStream ChooseOutput() throws IOException
+    {
+        DataOutputStream out;
+        if(input == null)
+            out = new DataOutputStream(new ByteArrayOutputStream());
+        else
+            out = new DataOutputStream(new FileOutputStream(output));
+
+        return out;
+    }*/
+
+    /*private void RunEncode() throws IOException
+    {
+        DataInputStream readerInput = null;
+        DataOutputStream writerOutput = null;
+        try
+        {
+            readerInput = ChooseInput();
+            writerOutput = ChooseOutput();
+        }
+        catch(IOException ex){
+
+            Log.report("Can't decode file");
+            throw new IOException();
+        }
+
+        try
+        {
+            byte i = readerInput.readByte();
+            int k = 1;
+
+            while (i != -1)
+            {
+                byte j = readerInput.readByte();
+
+                while (j == i)
+                {
+                    k++;
+                    j = readerInput.readByte();
+                }
+
+                writerOutput.writeByte((byte)k);
+                writerOutput.flush();
+                writerOutput.writeByte(i);
+                writerOutput.flush();
+
+                i = j;
+                k = 1;
+            }
+        }
+
+        catch (IOException e)
+        {
+
+        }
+
+        if(output == null)
+        {
+            Consumer.Put(writerOutput.toString());
+        }
+    }
+
+
+    private void RunDecode() throws IOException
+    {
+        DataInputStream readerInput = null;
+        DataOutputStream writerOutput = null;
+        try
+        {
+            readerInput = ChooseInput();
+            writerOutput = ChooseOutput();
+        }
+        catch(IOException ex){
+
+            Log.report("Can't decode file");
+            throw new IOException();
+        }
+
+
+        byte k = 0;
+        try {
+            while((k = readerInput.readByte()) != -1)
+            {
+                byte j = readerInput.readByte();
+                while( k > 0)
+                {
+                    writerOutput.writeByte((char)j);
+                    writerOutput.flush();
+                    k--;
+                }
+            }
+        }
+        catch (IOException e)
+        {
+
+        }
+        readerInput.close();
+        writerOutput.close();
+
+    }*/
